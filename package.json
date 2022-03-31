@@ -1,0 +1,31 @@
+{
+  "name": "shopapp",
+  "version": "1.0.0",
+  "description": "shopping cart app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnagen/ShopApp.git"
+  },
+  "author": "Branavan Nagendiram",
+  "license": "(MIT)",
+  "bugs": {
+    "url": "https://github.com/bnagen/ShopApp/issues"
+  },
+  "homepage": "https://github.com/bnagen/ShopApp#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
