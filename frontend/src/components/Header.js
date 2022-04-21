@@ -1,7 +1,9 @@
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
+import { Route, Routes } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../actions/userActions.js"
+import  SearchBox from './SearchBox'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -21,6 +23,7 @@ const Header = () => {
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
+          
             <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link className='px-3'>
@@ -43,6 +46,7 @@ const Header = () => {
                   </Nav.Link>
                 </LinkContainer>
               )}
+              
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>
                   <LinkContainer to='admin/userlist'>
@@ -58,7 +62,9 @@ const Header = () => {
               )}
             </Nav>
           </Navbar.Collapse>
+          <SearchBox></SearchBox>
         </Container>
+        
       </Navbar>
     </header>
   )

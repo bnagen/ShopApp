@@ -19,6 +19,9 @@ import UserEditScreen from "./screens/UserEditScreen.js"
 import ProductListScreen from "./screens/ProductListScreen.js"
 import ProductEditScreen from "./screens/ProductEditScreen.js"
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import OrderListScreen from "./screens/OrderListScreen"
+
 const App = () => {
   return (
     <Router>
@@ -54,6 +57,8 @@ const App = () => {
               element={<ProductEditScreen />}
             />
             <Route path='/admin/userlist/' element={<UserListScreen />} />
+            <Route path='/admin/orderlist/' element={<OrderListScreen />} />
+            <Route path='/search/:keyword' element={<HomeScreen></HomeScreen>}  />
           </Routes>
         </Container>
       </main>
